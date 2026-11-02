@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Babyshower de Sofía</title>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --crema:#fdf8f4; --rosa:#e9c6c0; --rosa-fuerte:#c98f88; --cinta:#e8b4ad; --texto:#6a5450; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; background:#f6e9e4; font-family:'Lato',sans-serif; color:var(--texto); padding:24px 12px; display:flex; align-items:flex-start; justify-content:center; }
+  .tarjeta { position:relative; width:100%; max-width:430px; border-radius:22px; padding:26px; text-align:center; background-color:#fff;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(233,198,192,.30) 0 12px, transparent 12px 24px),
+      repeating-linear-gradient(90deg, rgba(233,198,192,.30) 0 12px, transparent 12px 24px);
+    box-shadow:0 14px 34px rgba(120,80,70,.14); }
+  .panel { background:rgba(255,255,255,.96); border-radius:18px; padding:20px 18px 22px; }
+  .ganso { width:230px; height:auto; display:block; margin:0 auto; }
+  .pre { font-family:'Cormorant Garamond',serif; font-size:15px; letter-spacing:4px; text-transform:uppercase; color:var(--rosa-fuerte); margin:2px 0 0; }
+  h1 { font-family:'Pinyon Script',cursive; font-weight:400; font-size:64px; margin:0 0 6px; color:var(--texto); line-height:1.1; }
+  .cinta { width:120px; height:1px; background:var(--cinta); margin:0 auto 14px; }
+  .frase { font-family:'Cormorant Garamond',serif; font-size:19px; font-style:italic; margin:0 0 16px; color:var(--rosa-fuerte); }
+  .fila { border-top:1px dashed var(--rosa); padding:10px 0; }
+  .fila:first-of-type { border-top:none; }
+  .fila strong { display:block; font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--rosa-fuerte); margin-bottom:3px; font-weight:600; }
+  .fila span { font-size:15px; }
+  a { color:inherit; }
+  a.direccion { text-decoration:underline dotted; text-underline-offset:3px; }
+  .btn { display:block; margin:10px 0 0; padding:13px; border-radius:30px; text-decoration:none; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; font-weight:600; }
+  .btn-1 { background:var(--rosa); color:var(--texto); }
+  .btn-2 { background:var(--rosa-fuerte); color:#fff; }
+  .firma { font-family:'Pinyon Script',cursive; font-size:24px; margin:14px 0 0; color:var(--rosa-fuerte); }
+</style>
+</head>
+<body>
+  <div class="tarjeta">
+    <div class="panel">
+      <svg class="ganso" viewBox="0 0 300 330" xmlns="http://www.w3.org/2000/svg" aria-label="Mamá ganso con su pequeño ganso">
+        <!-- marco ovalado -->
+        <ellipse cx="150" cy="165" rx="134" ry="160" fill="#fff" stroke="#e9c6c0" stroke-width="2"/>
+        <ellipse cx="150" cy="165" rx="120" ry="146" fill="#f3d6d0"/>
+
+        <!-- cola -->
+        <path d="M96 230 C78 224 72 208 80 198 C92 204 102 216 106 230 Z" fill="#fff" stroke="#e3c0b8" stroke-width="1.5"/>
+        <!-- cuerpo -->
+        <path d="M92 252 C88 210 120 188 160 190 C200 192 222 222 216 254 C210 286 172 296 142 292 C114 288 96 274 92 252 Z" fill="#fff" stroke="#e3c0b8" stroke-width="1.5"/>
+        <!-- ala -->
+        <path d="M118 236 C138 212 182 212 198 238 C182 262 146 266 118 252 Z" fill="#f6ece6" stroke="#e3c0b8" stroke-width="1.2"/>
+        <path d="M134 238 C146 232 158 234 168 240 M140 250 C152 246 164 248 176 252" stroke="#e3c0b8" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+        <!-- cuello (contorno y relleno) -->
+        <path d="M122 200 C98 172 100 130 118 112" stroke="#e3c0b8" stroke-width="38" stroke-linecap="round" fill="none"/>
+        <path d="M122 200 C98 172 100 130 118 112" stroke="#fff" stroke-width="34" stroke-linecap="round" fill="none"/>
+
+        <!-- cabeza -->
+        <ellipse cx="136" cy="100" rx="30" ry="25" fill="#fff" stroke="#e3c0b8" stroke-width="1.5"/>
+        <!-- pico -->
+        <path d="M158 96 C170 98 180 104 186 110 C180 116 170 118 158 116 Z" fill="#f0a048"/>
+        <!-- ojo cerrado y mejilla -->
+        <path d="M122 96 Q128 91 134 96" stroke="#6a5450" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="124" cy="108" r="6" fill="#f2b0a8" opacity=".7"/>
+
+        <!-- lazo rosa en el cuello -->
+        <path d="M108 168 C98 158 88 164 94 176 C98 182 108 176 108 168 Z" fill="#e0a0a0"/>
+        <path d="M108 168 C118 158 128 164 122 176 C118 182 108 176 108 168 Z" fill="#e0a0a0"/>
+        <circle cx="108" cy="170" r="4" fill="#d48d8d"/>
+        <path d="M106 174 L100 198 M110 174 L116 198" stroke="#e0a0a0" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- patas -->
+        <path d="M128 292 L122 312 M122 312 L112 316 M122 312 L132 318" stroke="#f0a048" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M176 290 L182 312 M182 312 L172 316 M182 312 L192 318" stroke="#f0a048" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+        <!-- pequeño ganso sobre la espalda -->
+        <ellipse cx="190" cy="222" rx="20" ry="15" fill="#fff9e8" stroke="#e8d7a8" stroke-width="1.2"/>
+        <circle cx="206" cy="206" r="12" fill="#fff9e8" stroke="#e8d7a8" stroke-width="1.2"/>
+        <path d="M216 207 L226 210 L216 213 Z" fill="#f0b048"/>
+        <path d="M204 203 Q207 200 210 203" stroke="#6a5450" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <circle cx="203" cy="210" r="2.4" fill="#f2b0a8" opacity=".8"/>
+        <path d="M184 234 L180 246 M190 234 L192 246" stroke="#f0b048" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+
+      <p class="pre">Babyshower</p>
+      <h1>Sofía</h1>
+      <div class="cinta"></div>
+      <p class="frase">Una pequeña está por llegar. ¡Acompáñanos a celebrarla!</p>
+
+      <div class="fila"><strong>Fecha</strong><span>Sábado 5 de diciembre de 2026</span></div>
+      <div class="fila"><strong>Hora</strong><span>2:00 p.m.</span></div>
+      <div class="fila"><strong>Lugar</strong><span><a class="direccion" href="https://www.google.com/maps/search/?api=1&query=2010+E+President+Street+Savannah+GA" target="_blank" rel="noopener">2010 E President Street, Savannah, GA</a></span></div>
+
+      <a class="btn btn-1" href="https://www.amazon.com/baby-reg/dorianna-chacn-february-2027-portwentworth/3HYUFMVJXU9FY" target="_blank" rel="noopener">Ver registry de regalos</a>
+      <a class="btn btn-2" href="https://script.google.com/macros/s/AKfycbw7uAM4aaXB6WPX6mDXZqG5VACJA-fX3pxXrsdMpXq-XZohExl0TDfAr7qyou8LR23FJQ/exec" target="_blank" rel="noopener">Confirmar asistencia</a>
+
+      <p class="firma">Anfitrionas: las hadas madrinas</p>
+    </div>
+  </div>
+</body>
+</html>
