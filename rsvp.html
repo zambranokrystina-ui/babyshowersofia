@@ -15,8 +15,8 @@
       repeating-linear-gradient(90deg, rgba(233,198,192,.30) 0 12px, transparent 12px 24px);
     box-shadow:0 14px 34px rgba(120,80,70,.14); }
   .panel { background:rgba(255,255,255,.96); border-radius:18px; padding:24px 20px 26px; }
-  .sub { font-family:'Pinyon Script',cursive; font-weight:400; font-size:46px; text-align:center; margin:0; line-height:1.1; color:var(--texto); }
-  .sub2 { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; text-align:center; color:var(--rosa-fuerte); margin:4px 0 18px; }
+  .titulo { font-family:'Pinyon Script',cursive; font-weight:400; font-size:46px; text-align:center; margin:0; line-height:1.1; color:var(--texto); }
+  .sub { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; text-align:center; color:var(--rosa-fuerte); margin:4px 0 18px; }
   label { display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--rosa-fuerte); margin:14px 0 6px; font-weight:600; }
   input, select { width:100%; padding:12px 14px; border:1px solid var(--rosa); border-radius:12px; font:inherit; font-size:16px; background:var(--crema); color:var(--texto); }
   input:focus, select:focus { outline:none; border-color:var(--rosa-fuerte); }
@@ -24,15 +24,16 @@
   button:disabled { opacity:.6; cursor:default; }
   .msg { display:none; text-align:center; margin-top:18px; font-size:15px; }
   .ok { font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--rosa-fuerte); }
-  .error { color:#b5483f; }
+  .error { color:#8a7470; }
   .fecha { font-family:'Cormorant Garamond',serif; font-size:17px; text-align:center; margin-top:14px; }
+  .vestimenta { font-size:14px; line-height:1.5; margin:16px 0 0; padding:10px 12px; background:var(--crema); border:1px solid var(--rosa); border-radius:14px; text-align:center; }
 </style>
 </head>
 <body>
   <div class="tarjeta">
     <div class="panel">
-      <h1 class="sub">Confirma tu asistencia</h1>
-      <p class="sub2">Babyshower Sofía</p>
+      <h1 class="titulo">Confirma tu asistencia</h1>
+      <p class="sub">Babyshower Sofía</p>
 
       <form id="form">
         <label for="nombre">Nombre</label>
@@ -57,6 +58,7 @@
       <p class="msg error" id="error">Hubo un problema. Intenta de nuevo.</p>
       <p class="msg ok" id="ok">¡Gracias! Tu asistencia quedó confirmada.</p>
       <p class="fecha">Sábado 5 de diciembre de 2026 · 2:00 p.m.</p>
+      <p class="vestimenta">Te invitamos a vestir en tonos suaves. Por favor, evita el negro, el rojo y los colores intensos.</p>
     </div>
   </div>
 
