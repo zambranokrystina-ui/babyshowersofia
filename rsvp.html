@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confirmar asistencia - Babyshower Sofía</title>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --rosa:#e9c6c0; --rosa-fuerte:#c98f88; --texto:#6a5450; --crema:#fdf8f4; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; background:#f6e9e4; font-family:'Lato',sans-serif; color:var(--texto); padding:24px 12px; display:flex; align-items:flex-start; justify-content:center; }
+  .tarjeta { position:relative; width:100%; max-width:430px; border-radius:22px; padding:26px; background-color:#fff;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(233,198,192,.30) 0 12px, transparent 12px 24px),
+      repeating-linear-gradient(90deg, rgba(233,198,192,.30) 0 12px, transparent 12px 24px);
+    box-shadow:0 14px 34px rgba(120,80,70,.14); }
+  .panel { background:rgba(255,255,255,.96); border-radius:18px; padding:24px 20px 26px; }
+  .sub { font-family:'Pinyon Script',cursive; font-weight:400; font-size:46px; text-align:center; margin:0; line-height:1.1; color:var(--texto); }
+  .sub2 { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; text-align:center; color:var(--rosa-fuerte); margin:4px 0 18px; }
+  label { display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--rosa-fuerte); margin:14px 0 6px; font-weight:600; }
+  input, select { width:100%; padding:12px 14px; border:1px solid var(--rosa); border-radius:12px; font:inherit; font-size:16px; background:var(--crema); color:var(--texto); }
+  input:focus, select:focus { outline:none; border-color:var(--rosa-fuerte); }
+  button { width:100%; margin-top:22px; padding:14px; border:none; border-radius:30px; background:var(--rosa-fuerte); color:#fff; font:inherit; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:600; cursor:pointer; }
+  button:disabled { opacity:.6; cursor:default; }
+  .msg { display:none; text-align:center; margin-top:18px; font-size:15px; }
+  .ok { font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--rosa-fuerte); }
+  .error { color:#b5483f; }
+  .fecha { font-family:'Cormorant Garamond',serif; font-size:17px; text-align:center; margin-top:14px; }
+</style>
+</head>
+<body>
+  <div class="tarjeta">
+    <div class="panel">
+      <h1 class="sub">Confirma tu asistencia</h1>
+      <p class="sub2">Babyshower Sofía</p>
+
+      <form id="form">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" required autocomplete="given-name">
+
+        <label for="apellido">Apellido</label>
+        <input id="apellido" required autocomplete="family-name">
+
+        <label for="personas">Número de personas</label>
+        <select id="personas" required>
+          <option value="">Selecciona</option>
+          <option value="1">1 persona</option>
+          <option value="2">2 personas</option>
+          <option value="3">3 personas</option>
+          <option value="4">4 personas</option>
+          <option value="5">5 personas</option>
+        </select>
+
+        <button type="submit" id="btn">Confirmar</button>
+      </form>
+
+      <p class="msg error" id="error">Hubo un problema. Intenta de nuevo.</p>
+      <p class="msg ok" id="ok">¡Gracias! Tu asistencia quedó confirmada.</p>
+      <p class="fecha">Sábado 5 de diciembre de 2026 · 2:00 p.m.</p>
+    </div>
+  </div>
+
+<script>
+  var URL_RSVP = 'https://script.google.com/macros/s/AKfycbw7uAM4aaXB6WPX6mDXZqG5VACJA-fX3pxXrsdMpXq-XZohExl0TDfAr7qyou8LR23FJQ/exec';
+
+  document.getElementById('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('btn');
+    var err = document.getElementById('error');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    err.style.display = 'none';
+
+    var datos = new URLSearchParams({
+      nombre: document.getElementById('nombre').value.trim(),
+      apellido: document.getElementById('apellido').value.trim(),
+      personas: document.getElementById('personas').value
+    });
+
+    fetch(URL_RSVP, { method: 'POST', mode: 'no-cors', body: datos })
+      .then(function () {
+        document.getElementById('form').style.display = 'none';
+        document.getElementById('ok').style.display = 'block';
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Confirmar';
+        err.style.display = 'block';
+      });
+  });
+</script>
+</body>
+</html>
