@@ -20,6 +20,7 @@
   label { display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--rosa-fuerte); margin:14px 0 6px; font-weight:600; }
   input, select { width:100%; padding:12px 14px; border:1px solid var(--rosa); border-radius:12px; font:inherit; font-size:16px; background:var(--crema); color:var(--texto); }
   input:focus, select:focus { outline:none; border-color:var(--rosa-fuerte); }
+  .fila-dos { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   button { width:100%; margin-top:22px; padding:14px; border:none; border-radius:30px; background:var(--rosa-fuerte); color:#fff; font:inherit; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:600; cursor:pointer; }
   button:disabled { opacity:.6; cursor:default; }
   .msg { display:none; text-align:center; margin-top:18px; font-size:15px; }
@@ -42,15 +43,30 @@
         <label for="apellido">Apellido</label>
         <input id="apellido" required autocomplete="family-name">
 
-        <label for="personas">Número de personas</label>
-        <select id="personas" required>
-          <option value="">Selecciona</option>
-          <option value="1">1 persona</option>
-          <option value="2">2 personas</option>
-          <option value="3">3 personas</option>
-          <option value="4">4 personas</option>
-          <option value="5">5 personas</option>
-        </select>
+        <div class="fila-dos">
+          <div>
+            <label for="adultos">Adultos</label>
+            <select id="adultos" required>
+              <option value="">Selecciona</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div>
+            <label for="ninos">Niños</label>
+            <select id="ninos" required>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
 
         <button type="submit" id="btn">Confirmar</button>
       </form>
@@ -76,7 +92,8 @@
     var datos = new URLSearchParams({
       nombre: document.getElementById('nombre').value.trim(),
       apellido: document.getElementById('apellido').value.trim(),
-      personas: document.getElementById('personas').value
+      adultos: document.getElementById('adultos').value,
+      ninos: document.getElementById('ninos').value
     });
 
     fetch(URL_RSVP, { method: 'POST', mode: 'no-cors', body: datos })
